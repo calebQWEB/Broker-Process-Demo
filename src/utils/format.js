@@ -24,3 +24,9 @@ export function daysLeftLabel(days) {
     if (days === 0) return "Due today";
     return `${days} days`;
 }
+
+// Shorten a chart axis label, e.g. "Reinsurance & Multinational Risks" → "Reinsurance…"
+export function shortLabel(text, max = 12) {
+    const value = String(text ?? "");
+    return value.length > max ? `${value.slice(0, max - 1).trimEnd()}…` : value;
+}

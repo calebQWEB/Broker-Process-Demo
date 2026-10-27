@@ -74,8 +74,8 @@ export default function UpcomingRenewals() {
     const isOpsManager = role === "Ops Manager";
 
     return (
-        <div className="p-8">
-            <div className="flex items-center justify-between mb-6">
+        <div className="p-4 md:p-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
                 <div className="flex items-center gap-2 text-sm text-gray-600">
                     <Clock size={16} className="text-gray-400" />
                     <span>Show renewals due within:</span>

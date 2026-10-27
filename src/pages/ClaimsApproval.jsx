@@ -65,7 +65,7 @@ export default function ClaimsApproval() {
     const isOpsManager = role === "Ops Manager";
 
     return (
-        <div className="p-8">
+        <div className="p-4 md:p-8">
             {error && (
                 <div className="mb-4 text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-2.5">
                     {error}

@@ -40,7 +40,7 @@ export default function UploadForm() {
 
     return (
         <div className="max-w-2xl">
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+            <div className="bg-white rounded-2xl border border-gray-200 p-5 md:p-8 shadow-sm">
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">
                     Upload Policy Schedule
                 </h3>

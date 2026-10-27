@@ -27,7 +27,7 @@ export default function Upload() {
     }
 
     return (
-        <div className="p-8 flex flex-col items-center gap-6">
+        <div className="p-4 md:p-8 flex flex-col items-center gap-6">
             <UploadForm />
 
             <div className="max-w-2xl w-full border-t border-gray-200 pt-6">

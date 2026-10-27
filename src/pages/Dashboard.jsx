@@ -122,7 +122,7 @@ export default function Dashboard() {
 
     if (error && !summary) {
         return (
-            <div className="p-8 text-center py-16 text-red-500 text-sm">
+            <div className="p-4 md:p-8 text-center py-16 text-red-500 text-sm">
                 {error}
             </div>
         );
@@ -132,8 +132,8 @@ export default function Dashboard() {
     const showReviewedDate = activeTab !== "pending";
 
     return (
-        <div className="p-8 space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="p-4 md:p-8 space-y-6 md:space-y-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
                 <StatCard
                     label="Total Policies"
                     value={stats.totalPolicies}
@@ -160,7 +160,7 @@ export default function Dashboard() {
                 />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <Link
                     to="/upload"
                     className="bg-white rounded-2xl border border-gray-200 p-6 flex items-center justify-between hover:border-[#0f3d2e]/30 hover:shadow-sm transition-all group"
@@ -271,7 +271,9 @@ export default function Dashboard() {
                                 No {activeTab} renewals found.
                             </div>
                         ) : (
-                            <table className="w-full text-sm mt-2">
+                            // Scrolls sideways on narrow screens instead of being clipped by the card
+                            <div className="overflow-x-auto">
+                            <table className="w-full text-sm mt-2 whitespace-nowrap">
                                 <thead>
                                     <tr className="bg-gray-50 border-b border-gray-100 text-left text-gray-500 text-xs uppercase tracking-wide">
                                         <th className="px-6 py-3">
@@ -354,6 +356,7 @@ export default function Dashboard() {
                                     ))}
                                 </tbody>
                             </table>
+                            </div>
                         )}
                     </>
                 ) : (
@@ -367,7 +370,8 @@ export default function Dashboard() {
                                 No pending claims.
                             </div>
                         ) : (
-                            <table className="w-full text-sm">
+                            <div className="overflow-x-auto">
+                            <table className="w-full text-sm whitespace-nowrap">
                                 <thead>
                                     <tr className="bg-gray-50 border-b border-gray-100 text-left text-gray-500 text-xs uppercase tracking-wide">
                                         <th className="px-6 py-3">
@@ -407,6 +411,7 @@ export default function Dashboard() {
                                     ))}
                                 </tbody>
                             </table>
+                            </div>
                         )}
                     </>
                 )}

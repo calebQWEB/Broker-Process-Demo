@@ -70,7 +70,7 @@ export default function Reports() {
 
     if (error) {
         return (
-            <div className="p-8 text-center py-16 text-red-500 text-sm">
+            <div className="p-4 md:p-8 text-center py-16 text-red-500 text-sm">
                 {error}
             </div>
         );
@@ -85,8 +85,8 @@ export default function Reports() {
     } = summary;
 
     return (
-        <div className="p-8 space-y-8">
-            <div className="flex items-center justify-between">
+        <div className="p-4 md:p-8 space-y-6 md:space-y-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <h2 className="text-lg font-semibold text-gray-900">
                     Summary Report
                 </h2>
@@ -103,7 +103,7 @@ export default function Reports() {
                     Export Cleaned Schedule
                 </button>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-3 md:gap-6">
                 <StatCard
                     label="Total Policies"
                     value={stats.totalPolicies}
@@ -136,12 +136,12 @@ export default function Reports() {
                 />
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
                 <LossRatioChart data={lossRatioByDivision} />
                 <PaymentStatusChart data={paymentStatusBreakdown} />
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
                 <RenewalsByMonthChart data={renewalsByMonth} />
                 <ClaimsByDivisionChart data={claimsByDivision} />
             </div>

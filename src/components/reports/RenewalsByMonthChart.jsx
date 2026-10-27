@@ -11,7 +11,7 @@ import {
 
 export default function RenewalsByMonthChart({ data }) {
     return (
-        <div className="bg-white rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-gray-200 p-4 md:p-6">
             <h3 className="text-sm font-semibold text-gray-700 mb-4">
                 Renewals Due by Month
             </h3>
