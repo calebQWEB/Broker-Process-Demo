@@ -17,6 +17,7 @@ const routes = [
     ["GET", /^claims\/pending$/, policies.pendingClaims],
     ["POST", /^claims\/(\d+)\/(approve|reject)$/, policies.reviewClaim],
     ["GET", /^claims\/history$/, policies.claimsHistory],
+    ["GET", /^cron\/keep-alive$/, policies.keepAlive],
 ];
 
 export default async function handler(req, res) {
@@ -28,7 +29,7 @@ export default async function handler(req, res) {
             if (!match || req.method !== method) continue;
 
             const body = method === "POST" ? await readJsonBody(req) : {};
-            const data = await action({ query, body, params: match.slice(1) });
+            const data = await action({ query, body, params: match.slice(1), headers: req.headers });
 
             return sendJson(res, 200, data);
         }

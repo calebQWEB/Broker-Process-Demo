@@ -112,7 +112,7 @@ export default function UpcomingRenewals() {
                     No renewals pending within {days} days.
                 </div>
             ) : (
-                <div className="bg-white rounded-2xl border border-gray-200 overflow-x-auto scrollbar-hide">
+                <div className="bg-white rounded-2xl border border-gray-200 overflow-x-auto">
                     <table className="w-full text-sm">
                         <thead>
                             <tr className="bg-gray-50 border-b border-gray-200 text-left text-gray-500 text-xs uppercase tracking-wide">
@@ -135,7 +135,8 @@ export default function UpcomingRenewals() {
                                     Days Left
                                 </th>
                                 {isOpsManager && (
-                                    <th className="px-4 py-3 whitespace-nowrap">
+                                    // Pinned so the buttons stay visible when the table scrolls sideways
+                                    <th className="px-4 py-3 whitespace-nowrap sticky right-0 bg-inherit shadow-[-6px_0_6px_-6px_rgba(0,0,0,0.12)]">
                                         Action
                                     </th>
                                 )}
@@ -154,7 +155,7 @@ export default function UpcomingRenewals() {
                                                 ? "bg-green-50"
                                                 : confirmed === "rejected"
                                                   ? "bg-red-50"
-                                                  : "hover:bg-gray-50"
+                                                  : "bg-white hover:bg-gray-50"
                                         }`}
                                     >
                                         <td className="px-4 py-3.5 font-medium text-gray-900 whitespace-nowrap">
@@ -194,7 +195,7 @@ export default function UpcomingRenewals() {
                                             </div>
                                         </td>
                                         {isOpsManager && (
-                                            <td className="px-4 py-3.5 whitespace-nowrap">
+                                            <td className="px-4 py-3.5 whitespace-nowrap sticky right-0 bg-inherit shadow-[-6px_0_6px_-6px_rgba(0,0,0,0.12)]">
                                                 {confirmed ? (
                                                     <span
                                                         className={`text-sm font-medium ${
